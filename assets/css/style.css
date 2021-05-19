@@ -1,0 +1,24 @@
+#heading {
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-image: linear-gradient(to right, #456ebd, #1f0b52);
+}
+
+h2 h3 {
+  font-weight: bold;
+}
+
+#current-city {
+  display: flex;
+}
+
+.forecast {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#day-forecast {
+}
