@@ -12,76 +12,81 @@
 </head>
 <body>
     <!-- Title header -->
-    <header id="heading" class="">
+    <header id="heading">
         <h1>Weather Dashboard</h1>
     </header>
-    <div>
-    <div>
+    <div id="divider">
+
              <!-- "Search For a City Sidebar" -->
     <section id= "search-city">
         <h2>Search For a City:</h2>
         <form>
-            <textarea rows="2" cols="40">
-              San Diego
-              </textarea>
-              <input type="submit" value="Submit">
+            <input type="text" id="search-term" >
+              <input id="search" type="submit" value="Search">
             </form>
             <div id="line"></div>
+            <div id="past-search"></div>
     </section>
-    </div>    
+
     
-    <div>
+    <div id="right-side">
          <!-- Current City Info -->
-    <section id="current-city"></section>
+    <section id="current-city">
+      <div id="city-date-icon">
+        <h2 id="searched-city">City</h2> <h2 id="current-date"></h2> <img id="todays-icon">
+      </div>
+      <div>
+        <h6 id="temp">Temp:</h6>
+        <h6 id="wind"> Wind:</h6>
+        <h6 id="humidity">Humidity:</h6>
+        <h6>UV Index: <span id="uvi"></span></h6>
+      </div>
+    
+    </section>
     <!-- 5-Day Cards Forecast -->
     <section id="day-forecast">
         <h3>5-Day Forecast:</h3>
         <div class="forecast">
           <div class="card" style="width: 10rem;">
-            <div class="card-header">
-              Featured
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
+              <ul class="list-group list-group-flush">
+              <li class="list-group-item">Date+1</li>
+              <li class="list-group-item">Icon</li>
+              <li class="list-group-item">Temp</li>
+              <li class="list-group-item">Wind</li>
+              <li class="list-group-item">Humidity</li>
             </ul>
           </div>
           <div class="card" style="width: 10rem;">
-            <div class="card-header">
-              Featured
-            </div>
-            <ul class="list-group list-group-flush">
+            
+              <ul class="list-group list-group-flush">
+              <li class="list-group-item">An item</li>
               <li class="list-group-item">An item</li>
               <li class="list-group-item">A second item</li>
               <li class="list-group-item">A third item</li>
             </ul>
           </div> 
           <div class="card" style="width: 10rem;">
-            <div class="card-header">
-              Featured
-            </div>
-            <ul class="list-group list-group-flush">
+            
+              <ul class="list-group list-group-flush">
+              <li class="list-group-item">An item</li>
               <li class="list-group-item">An item</li>
               <li class="list-group-item">A second item</li>
               <li class="list-group-item">A third item</li>
             </ul>
           </div>  
           <div class="card" style="width: 10rem;">
-            <div class="card-header">
-              Featured
-            </div>
-            <ul class="list-group list-group-flush">
+            
+              <ul class="list-group list-group-flush">
+              <li class="list-group-item">An item</li>
               <li class="list-group-item">An item</li>
               <li class="list-group-item">A second item</li>
               <li class="list-group-item">A third item</li>
             </ul>
           </div>  
           <div class="card" style="width: 10rem;">
-            <div class="card-header">
-              Featured
-            </div>
-            <ul class="list-group list-group-flush">
+            
+              <ul class="list-group list-group-flush">
+              <li class="list-group-item">An item</li>
               <li class="list-group-item">An item</li>
               <li class="list-group-item">A second item</li>
               <li class="list-group-item">A third item</li>
@@ -99,6 +104,7 @@
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./assets/js/script.js"></script>
 </body>
 </html>
