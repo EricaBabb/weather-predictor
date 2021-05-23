@@ -13,7 +13,7 @@
 
 ## Website
 
-- Access the task management here:
+- Access the weather here:
   https://ericababb.github.io/weather-predictor/
 
 ![Alt text](./assets/images/weather-screenshot.png)
