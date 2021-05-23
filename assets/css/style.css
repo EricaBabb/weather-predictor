@@ -13,12 +13,17 @@ h2 h3 {
   display: flex;
 }
 
+#search-city h2 {
+  font-weight: bold;
+}
+
 #city-date-icon {
   display: flex;
 }
 
 #searched-city {
   margin-right: 10px;
+  font-weight: bold;
 }
 
 #current-date {

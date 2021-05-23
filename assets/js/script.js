@@ -10,15 +10,30 @@ var humidity = document.querySelector('#humidity')
 var todaysIcon = document.querySelector('#todays-icon')
 
 
+
 function searchWeather (event){
     event.preventDefault()
     var searchTerm = document.getElementById('search-term').value;
-    console.log(searchTerm);
-    TodaysWeather(searchTerm);
-    DayForecast(searchTerm);
+    localStorage.setItem("searchTerm", JSON.stringify(searchTerm));
+    todaysWeather(searchTerm);
+    // DayForecast(searchTerm);
 }
 
-function TodaysWeather (city) {
+function loadCities (cities) {
+cities = JSON.parse(localStorage.getItem("searchTerm"));
+var $div = $('past-search');
+var $ul = $('<ul>');
+$div.append($ul);
+var $cityli = $('<li>')
+$cityli.addClass('past-term-li').text(cities)
+$ul.append($cityli);
+
+
+}
+
+
+
+function todaysWeather (city) {
     fetch(
         'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=979cfe54b240cc95d9a8010066868f0b'
       )
@@ -58,19 +73,49 @@ function TodaysWeather (city) {
         });
 }
 
-function DayForecast(city) {
+// function DayForecast(city) {
     
-    fetch(
-      'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=979cfe54b240cc95d9a8010066868f0b'
-    )
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(data) {
-        console.log(data);
-        });
-  }
+//     fetch(
+//       'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=979cfe54b240cc95d9a8010066868f0b'
+//     )
+//       .then(function(response) {
+//         return response.json();
+//       })
+//       .then(function(data) {
+//         console.log(data);
+//         });
+//   }
 
+
+for (let i = 1; i <= 5; i++) {
+    let arrayCounter = 0;
+    let $ul = $('#day' + i);
+    let $li1 = $('<li>');
+    $li1.addClass('list-group-item list-group-flush');
+    
+    let $li2 = $('<li>');
+    $li2.addClass('list-group-item list-group-flush');
+    let $li3 = $('<li>');
+    $li3.addClass('list-group-item list-group-flush');
+    let $li4 = $('<li>');
+    $li4.addClass('list-group-item list-group-flush');
+    $ul.append($li1).append($li2).append($li3).append($li4);
+
+    // var searchTerm = document.getElementById('search-term').value;
+    // fetch(
+    //     'https://api.openweathermap.org/data/2.5/forecast?q=' + searchTerm + '&appid=979cfe54b240cc95d9a8010066868f0b'
+    //   )
+    //     .then(function(response) {
+    //       return response.json();
+    //     })
+    //     .then(function(data) {
+    //       console.log(data);
+    //     //   $li1.innerHTML= data.list[5].dt_txt 
+    //       });
+
+
+
+}
 
   
 var searchButton = document.querySelector('#search');
